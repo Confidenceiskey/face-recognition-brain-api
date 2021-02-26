@@ -18,9 +18,20 @@ const db = knex({
 });
 
 const app = express();
-
-app.use(cors());
 app.use(bodyParser.json());
+
+const whitelist = ['https://face-brain-dpn.herokuapp.com', 'https://smart-brain-dpn.herokuapp.com'];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions));
 
 app.get('/', (req, res) => { res.send('it is working') })
 app.post('/signin', signin.handleSignin(db, bcrypt))
