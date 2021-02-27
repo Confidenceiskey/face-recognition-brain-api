@@ -24,12 +24,11 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
-      "https://smart-brain-dpn.herokuapp.com/",
-      "https://face-brain-dpn.herokuapp.com/"
+      "https://smart-brain-dpn.herokuapp.com/,https://face-brain-dpn.herokuapp.com/",
     ],
-    allowedHeaders: ['X-Requested-With,content-type'],
+    allowedHeaders: ["X-Requested-With,content-type"],
     credentials: true,
-    methods: ['GET,PUT,POST']
+    methods: ["GET,PUT,POST"],
   })
 );
 
