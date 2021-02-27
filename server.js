@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://smart-brain-dpn.herokuapp.com",
     allowedHeaders: ["X-Requested-With,content-type"],
     credentials: true,
     methods: ["GET,PUT,POST"],
