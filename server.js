@@ -25,7 +25,7 @@ app.use(
   cors({
     origin: [
       "https://smart-brain-dpn.herokuapp.com/",
-      "https://face-brain-dpn.herokuapp.com/",
+      "https://face-brain-dpn.herokuapp.com/"
     ],
     allowedHeaders: ['X-Requested-With,Content-Type'],
     credentials: true,
