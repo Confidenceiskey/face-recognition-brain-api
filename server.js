@@ -12,7 +12,7 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    connectionString: process.env.DATABASE_URL, //in other words this is localhost 1.27.0.1 (not sure on exact name)
+    connectionString: process.env.DATABASE_URL, //in other words this is localhost 127.0.0.1 (not sure on exact name)
     ssl: true,
   },
 });
@@ -20,7 +20,6 @@ const db = knex({
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
 
 app.get("/", (req, res) => {
   res.send("it is working");
