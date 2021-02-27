@@ -20,7 +20,7 @@ const db = knex({
 const app = express();
 app.use(bodyParser.json());
 
-app.options('*', cors());
+app.options('/signin', cors());
 app.use(
   cors({
     origin: "https://smart-brain-dpn.herokuapp.com",
