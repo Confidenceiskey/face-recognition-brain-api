@@ -27,8 +27,9 @@ app.use(
       "https://smart-brain-dpn.herokuapp.com/",
       "https://face-brain-dpn.herokuapp.com/"
     ],
-    allowedHeaders: ['X-Requested-With,Content-Type'],
+    allowedHeaders: ['X-Requested-With,content-type'],
     credentials: true,
+    methods: ['GET,PUT,POST']
   })
 );
 
