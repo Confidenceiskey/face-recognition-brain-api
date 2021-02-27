@@ -20,15 +20,7 @@ const db = knex({
 const app = express();
 app.use(bodyParser.json());
 
-app.options('/signin', cors());
-app.use(
-  cors({
-    origin: "https://smart-brain-dpn.herokuapp.com",
-    allowedHeaders: ["Access-Control-Allow-Headers,Access-Control-Allow-Origin,Accept,X-Requested-With,content-type"],
-    credentials: true,
-    methods: ["GET,PUT,POST"],
-  })
-);
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("it is working");
