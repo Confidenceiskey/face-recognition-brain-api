@@ -13,7 +13,10 @@ const db = knex({
   client: "pg",
   connection: {
     connectionString: process.env.DATABASE_URL, //in other words this is localhost 127.0.0.1 (not sure on exact name)
-    ssl: true,
+    ssl: {
+      sslmode: "require",
+      rejectUnauthorized: false,
+    },
   },
 });
 
